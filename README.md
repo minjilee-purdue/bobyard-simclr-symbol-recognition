@@ -145,7 +145,7 @@ Example of 1-shot symbol matching:
 
 Query symbol → nearest support symbol in embedding space
 
-![Retrieval Example](results/retrieval_examples/retrieval_00.png)
+![Retrieval Example](results/retrieval_examples_test/retrieval_00.png)
 
 ---
 
@@ -168,10 +168,7 @@ Common failure modes include:
 Several improvements could further enhance performance:
 
 - multiple support examples per class
-- prototype averaging
-- hard negative mining
 - larger backbone (ResNet50 / ViT)
-- region proposal methods for full-drawing symbol localization
 
 ---
 
