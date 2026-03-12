@@ -1,8 +1,8 @@
-# Symbol Recognition in Technical Drawings using SimCLR
+# SimCLR Symbol Recognition for Engineering Drawings
 
-This project explores representation learning for recognizing symbols in technical drawings using contrastive learning.
+This project trains a contrastive learning model (SimCLR) to recognize fire-safety device symbols extracted from CAD engineering drawings.
 
-The goal is to build a system that can generalize to **new symbol sets with minimal supervision**, enabling **0-shot or 1-shot symbol matching**, which is a key requirement for Bobyard's workflow.
+The pipeline converts a YOLO detection dataset into cropped symbol images, learns visual representations using SimCLR, and evaluates the learned embeddings using one-shot nearest neighbor classification.
 
 ---
 
@@ -40,18 +40,10 @@ Test | 424 symbol crops |
 
 # Pipeline
 
-The pipeline used in this project:
-Engineering drawings
-→
-YOLO bounding boxes
-→
-Symbol crops
-→
-SimCLR contrastive learning
-→
-Symbol embedding space
-→
-1-shot symbol matching
+1. Convert YOLO detection annotations into cropped symbol images
+2. Train a SimCLR encoder to learn symbol embeddings
+3. Evaluate embeddings using one-shot nearest neighbor classification
+4. Visualize embedding structure with t-SNE
 
 
 ---
@@ -98,14 +90,9 @@ Instead of standard classification accuracy, evaluation was performed using a **
 
 # Results
 
-**1-shot accuracy**
-
-Accuracy: 37.5%
-
-Number of classes: ~40
-
-Random baseline: 2.5%
-
+- One-shot classification accuracy: **37.5%**
+- Embedding clusters visualized using **t-SNE**
+- Retrieval examples show semantic similarity between symbols
 
 The learned representation significantly outperforms random matching.
 
