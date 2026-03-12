@@ -146,6 +146,7 @@ Example of 1-shot symbol matching:
 Query symbol → nearest support symbol in embedding space
 
 ![Retrieval Example](results/retrieval_examples_test/retrieval_00.png)
+![Retrieval Example](results/retrieval_examples_test/retrieval_06.png)
 
 ---
 
